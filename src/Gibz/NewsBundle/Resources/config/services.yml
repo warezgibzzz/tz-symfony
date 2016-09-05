@@ -1,4 +1,6 @@
 services:
-  gibz_news.paginator:
-    class: Gibz\NewsBundle\Services\Paginator
-    arguments: ["@doctrine.orm.entity_manager", "%gibz_news.news_per_page"]
+  admin.article:
+    class: Gibz\NewsBundle\Admin\ArticleAdmin
+    arguments: [~, Gibz\NewsBundle\Entity\Article, ~]
+    tags:
+      - { name: sonata.admin, manager_type: orm, label: Article }

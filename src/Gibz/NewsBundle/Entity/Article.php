@@ -27,6 +27,10 @@ class Article
      */
     private $slug;
 
+    public function __toString()
+    {
+        return ($this->getTitle() != '') ? $this->getTitle() : 'New Article';
+    }
 
     /**
      * Get id
@@ -110,4 +114,3 @@ class Article
         return $this->slug;
     }
 }
-

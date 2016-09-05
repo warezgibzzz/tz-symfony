@@ -1,0 +1,20 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    Index - Showing {{ offset }} - {{ offset + news_per_page }} from {{ articles.count }} records
+    {% for article in articles %}
+        <h2><a href="{{ url('gibz_news_show', {'slug': article.slug}) }}">{{ article.title }}</a></h2>
+        <div class="article-content">
+            {{ article.body }}
+        </div>
+    {% else %}
+        <h2>No records</h2>
+    {% endfor %}
+
+    {% if page_count > 1 %}
+        <ul>
+            {% for i in 1..page_count %}
+                <li><a href="{{ url('gibz_news_homepage', {'page': i}) }}">{{ i }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

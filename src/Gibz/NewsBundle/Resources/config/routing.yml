@@ -1,3 +1,9 @@
 gibz_news_homepage:
-    path:     /
-    defaults: { _controller: GibzNewsBundle:Default:index }
+    path:     /{page}
+    defaults: { _controller: GibzNewsBundle:News:index, page: 1 }
+    requirements:
+        page: '\d+'
+
+gibz_news_show:
+    path:     /{slug}
+    defaults: { _controller: GibzNewsBundle:News:show }

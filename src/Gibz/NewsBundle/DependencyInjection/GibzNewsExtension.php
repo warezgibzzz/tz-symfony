@@ -25,7 +25,12 @@ class GibzNewsExtension extends Extension
         $config = $processor->processConfiguration($configuration, $configs);
 
 
-        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
+        foreach ($config as $key => $item) {
+            $container->setParameter('gibz_news.' . $key, $item);
+        }
+
+
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
         $loader->load('services.yml');
     }
 

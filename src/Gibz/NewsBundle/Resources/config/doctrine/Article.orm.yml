@@ -21,7 +21,6 @@ Gibz\NewsBundle\Entity\Article:
                 slug:
                     separator: _
                     fields:
-                        - id
                         - title
     indexes:
         search_idx:
