@@ -27,15 +27,6 @@ class Article
      */
     private $slug;
 
-    /**
-     * For sonata admin
-     *
-     * @return string
-     */
-    public function __toString()
-    {
-        return ($this->getTitle() != '') ? $this->getTitle() : 'New Article';
-    }
 
     /**
      * Get id
@@ -119,3 +110,4 @@ class Article
         return $this->slug;
     }
 }
+

@@ -1,19 +1,31 @@
-{% extends '::base.html.twig' %}
+{% extends 'GibzNewsBundle:layout:default.html.twig' %}
+{% block page_title %} - Article list{% endblock %}
 {% block body %}
-    Index - Showing {{ offset }} - {{ offset + news_per_page }} from {{ articles.count }} records
     {% for article in articles %}
-        <h2><a href="{{ url('gibz_news_show', {'slug': article.slug}) }}">{{ article.title }}</a></h2>
-        <div class="article-content">
-            {{ article.body }}
+        <div class="article-entry">
+            <h2 class="article-header">
+                <a href="{{ url('gibz_news_show', {'slug': article.slug}) }}">{{ article.title }}</a>
+            </h2>
+            <div class="article-content">
+                {{ article.body }}
+            </div>
         </div>
     {% else %}
-        <h2>No records</h2>
+        <h2 class="no-entries">No records</h2>
     {% endfor %}
 
     {% if page_count > 1 %}
-        <ul>
+        <p class="page-info">Showing {{ offset }} - {{ offset + news_per_page }} from {{ articles.count }} records</p>
+        <ul class="pagination">
+            <li><strong>Pages:</strong></li>
             {% for i in 1..page_count %}
-                <li><a href="{{ url('gibz_news_homepage', {'page': i}) }}">{{ i }}</a></li>
+                <li>
+                    {% if i == page %}
+                        <span>{{ i }}</span>
+                    {% else %}
+                        <a href="{{ url('gibz_news_homepage', {'page': i}) }}">{{ i }}</a>
+                    {% endif %}
+                </li>
             {% endfor %}
         </ul>
     {% endif %}

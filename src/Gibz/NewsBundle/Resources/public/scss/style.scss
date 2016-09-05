@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: url("http://subtlepatterns2015.subtlepatterns.netdna-cdn.com/patterns/concrete_seamless.png") repeat 0 0;
+  color: #333;
+}
+
+a {
+  color: #0d6aad;
+  text-decoration: none;
+  &:hover {
+    color: hue(#0d6aad);
+    text-decoration: underline;
+  }
+  &:visited {
+    color: #555;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 960px;
+
+  h1.app-title {
+    text-align: center;
+  }
+
+  hr.logo-separator {
+    border: 0;
+    border-bottom: 1px dotted #ccc;
+  }
+
+  .article-entry {
+    padding: 0 0 5px 0;
+    border-bottom: 1px dotted #ccc;
+  }
+
+  ul.pagination {
+    padding: 0;
+    margin: 20px 0 30px 0;
+    text-align: center;
+    li {
+      list-style: none;
+      float: left;
+      padding: 5px;
+      span {
+        font-weight: 700;
+      }
+    }
+
+  }
+}

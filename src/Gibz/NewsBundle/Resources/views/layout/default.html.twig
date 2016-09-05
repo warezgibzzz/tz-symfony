@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>{% block title %}News app{% endblock %}</title>
+    {% block stylesheets %}
+        {% stylesheets 'bundles/gibznews/scss/*' filter='cssrewrite,scssphp' %}
+        <link rel="stylesheet" href="{{ asset_url }}"/>
+        {% endstylesheets %}
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
+</head>
+<body>
+<div class="container">
+    <h1 class="app-title">News{% block page_title %}{% endblock %}</h1>
+    <hr class="logo-separator" />
+    {% block body %}{% endblock %}
+</div>
+{% block javascripts %}
+    {% javascripts '@GibzNewsBundle/Resources/public/js/*' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}
+</body>
+</html>

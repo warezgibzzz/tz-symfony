@@ -1,5 +1,12 @@
-{% extends '::base.html.twig' %}
+{% extends 'GibzNewsBundle:layout:default.html.twig' %}
 {% block body %}
-    <h2>{{ article.title }}</h2>
-    <div class="article-content">{{ article.body }}</div>
+    <div class="article-entry">
+        <h2 class="article-header">
+            {{ article.title }}
+            <small><a href="{{ url('gibz_news_homepage') }}">Go back</a></small>
+        </h2>
+        <div class="article-content">
+            {{ article.body }}
+        </div>
+    </div>
 {% endblock %}
