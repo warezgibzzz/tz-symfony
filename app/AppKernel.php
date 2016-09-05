@@ -23,6 +23,9 @@ class AppKernel extends Kernel
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new Sonata\AdminBundle\SonataAdminBundle(),
 
+            // Doctrine extensions
+            new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+
             // News
             new Gibz\NewsBundle\GibzNewsBundle(),
         ];

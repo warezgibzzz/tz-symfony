@@ -16,5 +16,14 @@ Gibz\NewsBundle\Entity\Article:
             type: text
         slug:
             type: string
-            length: 255
+            length: 128
+            gedmo:
+                slug:
+                    separator: _
+                    fields:
+                        - id
+                        - title
+    indexes:
+        search_idx:
+            columns: slug
     lifecycleCallbacks: {  }
