@@ -1,0 +1,20 @@
+Gibz\NewsBundle\Entity\Article:
+    type: entity
+    table: articles
+    repositoryClass: Gibz\NewsBundle\Repository\ArticleRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+        body:
+            type: text
+        slug:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

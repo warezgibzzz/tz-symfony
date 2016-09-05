@@ -1,0 +1,4 @@
+services:
+  gibz_news.paginator:
+    class: Gibz\NewsBundle\Services\Paginator
+    arguments: ["@doctrine.orm.entity_manager", "%gibz_news.news_per_page"]
